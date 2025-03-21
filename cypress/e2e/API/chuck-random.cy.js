@@ -27,5 +27,25 @@ describe('Random Joke API', () => {
           });
         }
     });
-
+    
+    it('Ensures each joke is unique over 5 tries', () => {
+      //Note: Not the best example as "random" could in fact return the same joke
+      //      but it is a good example of using a for each and "Set" to store unique values.
+      
+      let jokes = new Set(); // Sets only keep unique values
+  
+      // Create an array of requests
+      cy.wrap(Array.from({ length: 5 })).each(() => {
+        cy.request('https://api.chucknorris.io/jokes/random').then((response) => {
+          expect(response.status).to.eq(200);
+          expect(response.body).to.have.property('value').that.is.a('string');
+  
+          // Store the joke text
+          jokes.add(response.body.value);
+        });
+      }).then(() => {
+        // Assert that all 5 jokes are unique
+        expect(jokes.size).to.eq(5);
+      });
+    });
   });
