@@ -1,0 +1,16 @@
+{
+  "name": "aj-cypress-examples",
+  "description": "Cypress examples for AJ",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "cypress": "^14.2.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
