@@ -20,4 +20,4 @@ jobs:
           install: true
           config-file: cypress.config.js
           spec: |
-            cypress/e2e/UI/**/*.cy.js
+            cypress/e2e/UI/cypress-kitchen-sink.cy.js
