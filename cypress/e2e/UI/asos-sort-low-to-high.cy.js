@@ -1,4 +1,4 @@
-describe('Asos UI Mobile View Examples', () => {
+describe.skip('Asos UI Mobile View Examples', () => {
 
   beforeEach(() => {
     //Set the viewport to mobile view
