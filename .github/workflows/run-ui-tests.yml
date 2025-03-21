@@ -1,0 +1,23 @@
+name: Run UI Tests
+
+on:
+  workflow_dispatch:
+  #schedule:
+  #  - cron: "0 12 * * *"
+  
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+        
+      - name: Cypress run
+        uses: cypress-io/github-action@v6.6.1
+        with:
+          browser: chrome
+          install: true
+          config-file: cypress.config.js
+          spec: |
+            cypress/e2e/UI/**/*.cy.js
