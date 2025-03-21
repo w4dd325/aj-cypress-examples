@@ -1,2 +1,3 @@
-# aj-cypress-examples
-Cypress examples for AJ
+# AJ Cypress Examples
+
+Some basic examples of API and UI testing using Cypress
